@@ -3,26 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0d0d0d">
     <meta name="description" content="Personal Portfolio - Himanshu Kothari">
-    <meta name="Himanshu Kothari" content="personal portfolio-Himanshu Kothari">
-    <link rel="icon" type="image/png" href="/images/profilephoto.png">
+    <link rel="icon" type="image/png" href="images/profilephoto.png">
     <title>Himanshu Kothari - Portfolio</title>
 
-    <!-- Link to your External CSS File -->
+    <!-- Mobile stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Font Awesome CDN Link (This makes the social icons appear inside the circles) -->
+    <!-- Font Awesome CDN (social icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar with hamburger menu -->
     <header class="navbar">
         <div class="logo">
             Portfolio<span class="dot">.</span>
         </div>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+        <label for="nav-toggle" class="hamburger" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
         <nav>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
@@ -39,7 +47,7 @@
             <p class="welcome-text">Welcome To My Portfolio</p>
             <h1 class="name-title">Himanshu <span class="highlight">Kothari</span></h1>
             <p class="description">
-                - I'm a <strong>computer science student at IIIT Raichur, Karnataka</strong> with a passion for web
+                I'm a <strong>computer science student at IIIT Raichur, Karnataka</strong> with a passion for web
                 development and design. I want to specialize in <u><i>creating responsive, user-friendly websites and
                         applications</i></u>.
             </p>
@@ -51,7 +59,6 @@
         </div>
 
         <div class="hero-image-container">
-            <div class="yellow-shape"></div>
             <img src="images/profilephoto.png" alt="Himanshu Kothari Profile" class="profile-img">
         </div>
     </section>
@@ -71,39 +78,43 @@
             </ul>
 
             <h3 id="education">Educational Qualifications :</h3>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Degree / Certification</th>
-                        <th>Institution</th>
-                        <th>Year</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="images/10th marksheet.pdf" target="_blank">10th Standard</a></td>
-                        <td>S.V.A.V.M,Balotra,Rajasthan</td>
-                        <td>2022-23</td>
-                        <td>Completed</td>
-                    </tr>
-                    <tr>
-                        <td><a href="images/12th marksheet.pdf" target="_blank">12th Standard</a></td>
-                        <td>Mother Teresa School,Balotra,Rajasthan</td>
-                        <td>2024-25</td>
-                        <td>Completed</td>
-                    </tr>
-                    <tr>
-                        <td>B.Tech in Computer Science</td>
-                        <td>IIIT Raichur, Karnataka</td>
-                        <td>2026-30</td>
-                        <td>Enrolled</td>
-                    </tr>
-                </tbody>
-            </table>
 
+            <!-- On phones each row becomes a card (labels come from data-label) -->
+            <div class="table-responsive">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Degree / Certification</th>
+                            <th>Institution</th>
+                            <th>Year</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Degree"><a href="images/10th marksheet.pdf" target="_blank">10th Standard</a></td>
+                            <td data-label="Institution">S.V.A.V.M, Balotra, Rajasthan</td>
+                            <td data-label="Year">2022-23</td>
+                            <td data-label="Status">Completed</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Degree"><a href="images/12th marksheet.pdf" target="_blank">12th Standard</a></td>
+                            <td data-label="Institution">Mother Teresa School, Balotra, Rajasthan</td>
+                            <td data-label="Year">2024-25</td>
+                            <td data-label="Status">Completed</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Degree">B.Tech in Computer Science</td>
+                            <td data-label="Institution">IIIT Raichur, Karnataka</td>
+                            <td data-label="Year">2026-30</td>
+                            <td data-label="Status">Enrolled</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -112,18 +123,20 @@
                 using the form or details below.</p>
 
             <div class="contact-grid">
-                <!-- Left: Form Box -->
+                <!-- Form -->
                 <div class="contact-form-box">
                     <h3>Send a message</h3>
                     <p class="form-note">Fields marked with an asterisk are required.</p>
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Your name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                            <input type="text" id="name" name="name" required placeholder="Enter your name"
+                                autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Your email *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                            <input type="email" id="email" name="email" required placeholder="Enter your email"
+                                autocomplete="email" inputmode="email">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -142,7 +155,7 @@
                             href="mailto:himanshukothari2008@gmail.com">himanshukothari2008@gmail.com</a>.</p>
                 </div>
 
-                <!-- Right: Info & Details Box -->
+                <!-- Info & map -->
                 <div class="contact-info-side">
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
@@ -153,11 +166,13 @@
                             <p>Karnataka 584102, India</p>
                         </div>
                     </div>
+
                     <h3>Location / Campus Area :</h3>
                     <div class="iframe-container">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30651.458743322935!2d77.453075!3d16.1981982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9d17abbd87b87%3A0x28afde55f519a10b!2sIndian%20Institute%20of%20Information%20Technology%2C%20Raichur!5e0!3m2!1sen!2sin!4v1794267950878!5m2!1sen!2sin"
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"
+                            title="IIIT Raichur campus map"
                             referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
 
@@ -168,18 +183,16 @@
                             <a href="mailto:himanshukothari2008@gmail.com"
                                 class="info-email">himanshukothari2008@gmail.com</a>
                             <div class="social-links">
-
-                                <a href="https://twitter.com/himxkothari" target="_blank" class="social-icon"><i
-                                        class="fab fa-twitter"></i></a>
+                                <a href="https://twitter.com/himxkothari" target="_blank" rel="noopener"
+                                    class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                                 <a href="https://linkedin.com/in/himanshu-kothari-21229a432" target="_blank"
-                                    class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://instagram.com/himxkothari" target="_blank" class="social-icon"><i
-                                        class="fab fa-instagram"></i></a>
-                                <a href="https://github.com/himanshukothari2008-code" target="_blank"
-                                    class="social-icon"><i class="fab fa-github"></i></a>
-                               
+                                    rel="noopener" class="social-icon" aria-label="LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://instagram.com/himxkothari" target="_blank" rel="noopener"
+                                    class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://github.com/himanshukothari2008-code" target="_blank" rel="noopener"
+                                    class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -190,6 +203,15 @@
     <footer>
         <p>&copy; 2026 Himanshu Kothari. All rights reserved.</p>
     </footer>
+
+    <!-- Closes the mobile menu after a link is tapped -->
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                document.getElementById('nav-toggle').checked = false;
+            });
+        });
+    </script>
 
 </body>
 
