@@ -1,0 +1,470 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background-color: #0d0d0d;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.logo .dot {
+    color: #ffc107;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffc107;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 90px);
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 550px;
+    z-index: 2;
+}
+
+.welcome-text {
+    color: #ffc107;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.name-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.name-title .highlight {
+    color: #ffc107;
+}
+
+.description {
+    font-size: 16px;
+    color: #d1d1d1;
+    margin-bottom: 25px;
+}
+
+/* Social Icon Links */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffc107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffc107;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #ffc107;
+    color: #0d0d0d;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #ffc107;
+    color: #0d0d0d;
+}
+
+.primary-btn:hover {
+    background-color: #e0a800;
+}
+
+.secondary-btn {
+    border: 1px solid #ffc107;
+    color: #ffc107;
+}
+
+.secondary-btn:hover {
+    background-color: #ffc107;
+    color: #0d0d0d;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 440px;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 440px;
+    height: 440px;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+    border-radius: 50%;
+    border: 16px solid #ffc107;
+
+    /* Adds a soft shadow and inner dark fade to merge edges into the #0d0d0d background */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Details & Content Section */
+.details-section {
+    padding: 60px 8%;
+    background-color: #141414;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.details-section h2 {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.details-section h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.details-section ul {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    color: #cccccc;
+}
+
+/* Academic Table Styling */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    text-align: left;
+}
+
+/* Style all links inside the table */
+.styled-table td a {
+    color: #ffd700;
+    /* Bright gold/yellow color */
+    text-decoration: underline;
+    /* Keeps the underline so users know it's clickable */
+    transition: color 0.3s ease;
+    /* Smooth transition when hovering */
+}
+
+/* Color when you hover over the link */
+.styled-table td a:hover {
+    color: #ffffff;
+    /* Changes to white on hover */
+    text-decoration: none;
+}
+
+/* Prevent browser default blue for visited links */
+.styled-table td a:visited {
+    color: #ffd700;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #333333;
+}
+
+.styled-table thead tr {
+    background-color: #ffc107;
+    color: #0d0d0d;
+    font-weight: bold;
+}
+
+.styled-table tbody tr {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+.iframe-container {
+    margin-top: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d0d0d;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #222;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    padding: 80px 8%;
+    background-color: #0d0d0d;
+}
+
+.contact-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #aaaaaa;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form-box,
+.info-card {
+    background-color: #161616;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.contact-form-box h3,
+.info-card h4 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.form-note {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1f1f1f;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ffc107;
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    padding: 12px;
+}
+
+.form-fallback {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.5;
+}
+
+.form-fallback a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.form-fallback a:hover {
+    text-decoration: underline;
+}
+
+.contact-info-side {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 22px;
+    color: #ffc107;
+    background-color: #1f1f1f;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-card p {
+    color: #bbbbbb;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.info-email {
+    color: #ffc107;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.info-email:hover {
+    text-decoration: underline;
+}
+
+.info-social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.info-social-links a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ffc107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffc107;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.info-social-links a:hover {
+    background-color: #ffc107;
+    color: #0d0d0d;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE STYLES (Add to bottom)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Reduce large desktop padding so content doesn't overflow */
+    .navbar {
+        padding: 15px 5%;
+        flex-direction: column; /* Stack logo and links vertically */
+        gap: 15px;
+    }
+
+    /* Stack navigation links or make them fit neatly */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Reduce giant hero text titles if they overflow on mobile */
+    .logo {
+        font-size: 24px; 
+    }
+}
