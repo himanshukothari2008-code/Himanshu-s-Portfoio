@@ -1,2 +1,2 @@
-# Himanshu-s-Portfoio
+# Himanshu-s-Portfolio
 It is a portfolio website
