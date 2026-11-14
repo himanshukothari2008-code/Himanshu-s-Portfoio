@@ -25,6 +25,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     font-size: 16px;
+    /* Space for the fixed floating navigation bar */
+    padding-top: 82px;
 }
 
 img,
@@ -32,10 +34,10 @@ iframe {
     max-width: 100%;
 }
 
-/* Offset anchor jumps so the sticky navbar doesn't cover headings */
+/* Keep section headings visible below the floating navigation bar */
 section,
 h3[id] {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 100px;
 }
 
 /* ---------- Navigation Bar (hamburger menu) ---------- */
@@ -46,11 +48,17 @@ h3[id] {
     padding: 12px 5%;
     padding-left: max(5%, env(safe-area-inset-left));
     padding-right: max(5%, env(safe-area-inset-right));
-    background-color: #0d0d0d;
-    position: sticky;
-    top: 0;
+    background: rgba(20, 20, 20, 0.94);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    position: fixed;
+    top: 12px;
+    left: 5%;
+    width: 90%;
     z-index: 1000;
-    border-bottom: 1px solid #1a1a1a;
+    border: 1px solid rgba(255, 193, 7, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .logo {
@@ -108,8 +116,10 @@ h3[id] {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #0d0d0d;
-    border-bottom: 1px solid #1a1a1a;
+    background: rgba(20, 20, 20, 0.98);
+    border: 1px solid rgba(255, 193, 7, 0.20);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -660,8 +670,15 @@ footer {
         display: none;
     }
 
+    body {
+        padding-top: 96px;
+    }
+
     .navbar {
-        padding: 18px 6%;
+        top: 14px;
+        left: 5%;
+        width: 90%;
+        padding: 15px 3%;
     }
 
     .navbar nav {
@@ -711,5 +728,230 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
+    }
+}
+
+
+/* ==========================================================
+   Technology badges beside the profile photo
+   ========================================================== */
+.hero-image-container {
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tech-stack {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.tech-stack-title {
+    color: #bdbdbd;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+}
+
+.tech-badge {
+    min-width: 76px;
+    min-height: 62px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border: 1px solid #343434;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #202020, #151515);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease, border-color 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.tech-badge:hover {
+    transform: translateY(-4px);
+    border-color: #ffc107;
+    background: #242424;
+}
+
+.tech-badge i,
+.tech-badge strong {
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.tech-badge small {
+    color: #c8c8c8;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.tech-c strong { color: #7aa7ff; }
+.tech-cpp strong { color: #75aaff; font-size: 19px; }
+.tech-python i { color: #ffd343; }
+.tech-html i { color: #f06529; }
+.tech-css i { color: #379ad6; }
+.tech-git i { color: #f05032; }
+.tech-github i { color: #ffffff; }
+.tech-linux i { color: #ffc107; }
+
+/* ==========================================================
+   Contact columns: equal height and consistent grey panels
+   ========================================================== */
+.contact-grid {
+    align-items: stretch;
+}
+
+.contact-form-box,
+.contact-info-side {
+    height: 100%;
+    min-width: 0;
+}
+
+.contact-form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-side {
+    background-color: #161616;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 16px;
+}
+
+.contact-info-side .info-card {
+    background-color: #1c1c1c;
+    border-color: #303030;
+}
+
+.map-card {
+    background-color: #1c1c1c;
+    border: 1px solid #303030;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.map-card h3 {
+    color: #ffffff;
+    font-size: 17px;
+    margin: 0 0 12px;
+}
+
+.map-card .iframe-container {
+    border-color: #3a3a3a;
+}
+
+/* Footer and Go to Top button */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.go-to-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 19px;
+    border: 1px solid #ffc107;
+    border-radius: 24px;
+    color: #ffc107;
+    background-color: #161616;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.25s ease, color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.go-to-top:hover {
+    color: #0d0d0d;
+    background-color: #ffc107;
+    transform: translateY(-3px);
+}
+
+/* Desktop layout refinements */
+@media (min-width: 768px) {
+    .hero-image-container {
+        flex: 0 1 420px;
+        width: 100%;
+        max-width: 420px;
+        gap: 20px;
+    }
+
+    .tech-stack {
+        max-width: 390px;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: stretch;
+    }
+
+    .contact-form-box,
+    .contact-info-side {
+        min-height: 100%;
+    }
+
+    .contact-info-side {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-image-container {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .tech-stack {
+        max-width: 330px;
+    }
+
+    .tech-badge {
+        min-width: 70px;
+    }
+}
+
+
+/* Floating navigation refinements */
+@media (max-width: 767px) {
+    .navbar {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+
+    .navbar nav {
+        border-radius: 0 0 16px 16px;
+    }
+
+    .nav-links a {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    section,
+    h3[id] {
+        scroll-margin-top: 115px;
     }
 }
