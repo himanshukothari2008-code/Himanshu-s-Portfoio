@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,12 +15,11 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
-<body>
+<body id="top">
 
     <!-- Navigation Bar -->
     <header class="navbar">
@@ -30,8 +28,7 @@
             Portfolio<span class="dot">.</span>
         </div>
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle"
-            aria-label="Toggle navigation menu">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
 
         <label for="nav-toggle" class="hamburger" aria-hidden="true">
             <span></span>
@@ -86,9 +83,23 @@
 
         <div class="hero-image-container">
 
-            <img src="profilephoto.png"
-                alt="Himanshu Kothari Profile"
-                class="profile-img">
+            <img src="profilephoto.png" alt="Himanshu Kothari Profile" class="profile-img">
+
+            <!-- Friendly technology badges near the profile photo -->
+            <div class="tech-stack" aria-label="Technologies and tools">
+                <p class="tech-stack-title">Things I'm learning & building with</p>
+
+                <div class="tech-badges">
+                    <span class="tech-badge tech-c"><strong>C</strong><small>Basics</small></span>
+                    <span class="tech-badge tech-cpp"><strong>C++</strong><small>Logic</small></span>
+                    <span class="tech-badge tech-python"><i class="fa-brands fa-python"></i><small>Python</small></span>
+                    <span class="tech-badge tech-html"><i class="fa-brands fa-html5"></i><small>HTML5</small></span>
+                    <span class="tech-badge tech-css"><i class="fa-brands fa-css3-alt"></i><small>CSS3</small></span>
+                    <span class="tech-badge tech-git"><i class="fa-brands fa-git-alt"></i><small>Git</small></span>
+                    <span class="tech-badge tech-github"><i class="fa-brands fa-github"></i><small>GitHub</small></span>
+                    <span class="tech-badge tech-linux"><i class="fa-brands fa-linux"></i><small>Linux</small></span>
+                </div>
+            </div>
 
         </div>
 
@@ -224,29 +235,20 @@
 
                     <!-- WORKING EMAIL FORM -->
 
-                    <form action="https://formsubmit.co/himanshukothari2008@gmail.com"
-                        method="POST">
+                    <form action="https://formsubmit.co/himanshukothari2008@gmail.com" method="POST">
 
                         <!-- Email Subject -->
-                        <input type="hidden"
-                            name="_subject"
-                            value="New Message from Portfolio Website">
+                        <input type="hidden" name="_subject" value="New Message from Portfolio Website">
 
                         <!-- Email Template -->
-                        <input type="hidden"
-                            name="_template"
-                            value="table">
+                        <input type="hidden" name="_template" value="table">
 
                         <!-- Name -->
                         <div class="form-group">
 
                             <label for="name">Your name *</label>
 
-                            <input type="text"
-                                id="name"
-                                name="name"
-                                required
-                                placeholder="Enter your name"
+                            <input type="text" id="name" name="name" required placeholder="Enter your name"
                                 autocomplete="name">
 
                         </div>
@@ -257,11 +259,7 @@
 
                             <label for="email">Your email *</label>
 
-                            <input type="email"
-                                id="email"
-                                name="email"
-                                required
-                                placeholder="Enter your email"
+                            <input type="email" id="email" name="email" required placeholder="Enter your email"
                                 autocomplete="email">
 
                         </div>
@@ -272,10 +270,7 @@
 
                             <label for="subject">Subject</label>
 
-                            <input type="text"
-                                id="subject"
-                                name="subject"
-                                placeholder="Enter subject">
+                            <input type="text" id="subject" name="subject" placeholder="Enter subject">
 
                         </div>
 
@@ -285,18 +280,14 @@
 
                             <label for="message">Message *</label>
 
-                            <textarea id="message"
-                                name="message"
-                                rows="5"
-                                required
+                            <textarea id="message" name="message" rows="5" required
                                 placeholder="Type your message here..."></textarea>
 
                         </div>
 
 
                         <!-- Submit Button -->
-                        <button type="submit"
-                            class="btn primary-btn submit-btn">
+                        <button type="submit" class="btn primary-btn submit-btn">
 
                             <i class="fa-solid fa-paper-plane"></i>
                             Send Message
@@ -352,21 +343,16 @@
 
 
                     <!-- Google Map -->
-                    <h3>Location / Campus Area :</h3>
+                    <div class="map-card">
+                        <h3>Location / Campus Area</h3>
 
-                    <div class="iframe-container">
-
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30651.458743322935!2d77.453075!3d16.1981982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9d17abbd87b87%3A0x28afde55f519a10b!2sIndian%20Institute%20of%20Information%20Technology%2C%20Raichur!5e0!3m2!1sen!2sin!4v1794267950878!5m2!1sen!2sin"
-                            width="100%"
-                            height="240"
-                            style="border:0;"
-                            allowfullscreen
-                            loading="lazy"
-                            title="IIIT Raichur campus map"
-                            referrerpolicy="strict-origin-when-cross-origin">
-                        </iframe>
-
+                        <div class="iframe-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30651.458743322935!2d77.453075!3d16.1981982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9d17abbd87b87%3A0x28afde55f519a10b!2sIndian%20Institute%20of%20Information%20Technology%2C%20Raichur!5e0!3m2!1sen!2sin!4v1794267950878!5m2!1sen!2sin"
+                                width="100%" height="240" style="border:0;" allowfullscreen loading="lazy"
+                                title="IIIT Raichur campus map" referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
                     </div>
 
 
@@ -382,8 +368,7 @@
 
                             <h4>Email & profiles</h4>
 
-                            <a href="mailto:himanshukothari2008@gmail.com"
-                                class="info-email">
+                            <a href="mailto:himanshukothari2008@gmail.com" class="info-email">
 
                                 himanshukothari2008@gmail.com
 
@@ -393,44 +378,32 @@
                             <!-- Social Media Links -->
                             <div class="social-links">
 
-                                <a href="https://twitter.com/himxkothari"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="social-icon"
-                                    aria-label="Twitter">
+                                <a href="https://twitter.com/himxkothari" target="_blank" rel="noopener"
+                                    class="social-icon" aria-label="Twitter">
 
                                     <i class="fab fa-twitter"></i>
 
                                 </a>
 
 
-                                <a href="https://linkedin.com/in/himanshu-kothari-21229a432"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="social-icon"
-                                    aria-label="LinkedIn">
+                                <a href="https://linkedin.com/in/himanshu-kothari-21229a432" target="_blank"
+                                    rel="noopener" class="social-icon" aria-label="LinkedIn">
 
                                     <i class="fab fa-linkedin-in"></i>
 
                                 </a>
 
 
-                                <a href="https://instagram.com/himxkothari"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="social-icon"
-                                    aria-label="Instagram">
+                                <a href="https://instagram.com/himxkothari" target="_blank" rel="noopener"
+                                    class="social-icon" aria-label="Instagram">
 
                                     <i class="fab fa-instagram"></i>
 
                                 </a>
 
 
-                                <a href="https://github.com/himanshukothari2008-code"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="social-icon"
-                                    aria-label="GitHub">
+                                <a href="https://github.com/himanshukothari2008-code" target="_blank" rel="noopener"
+                                    class="social-icon" aria-label="GitHub">
 
                                     <i class="fab fa-github"></i>
 
@@ -459,25 +432,16 @@
             &copy; 2026 Himanshu Kothari. All rights reserved.
         </p>
 
+        <a href="#top" class="go-to-top">
+            <i class="fa-solid fa-arrow-up"></i>
+            Go to Top
+        </a>
+
     </footer>
 
 
 
-    <!-- Mobile Navigation Menu -->
-    <script>
-
-        document.querySelectorAll('.nav-links a').forEach(function (link) {
-
-            link.addEventListener('click', function () {
-
-                document.getElementById('nav-toggle').checked = false;
-
-            });
-
-        });
-
-    </script>
-
+    <!-- Navigation menu is controlled by the CSS checkbox; no JavaScript required. -->
 
 </body>
 
